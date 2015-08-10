@@ -1,0 +1,42 @@
+<div ng-init="init()">
+    <md-input-container>
+        <label for="pet-name">Pet Name</label>
+        <input id="pet-name" ng-model="apc.pet_name" required>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="pet-description">Description</label>
+        <textarea id="pet-description" ng-model="apc.description" required></textarea>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="expiry-date">Pet Expiry Date</label>
+        <input type="date" id="expiry-date" ng-model="apc.expiry_date" required>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="price">Price</label>
+        <input id="price" ng-model="apc.price" required>
+    </md-input-container>
+
+    <!--<div>-->
+        <!--<md-button class="md-raised">-->
+            <!--<label for="add-pet-action-flow">Add Pet Action ng-flow</label>-->
+        <!--</md-button>-->
+        <!--&lt;!&ndash;<input type="file" id="add-pet-action" style="display: none;" ng-model="apc.petImage" flow-btn flow-directory> <br/>&ndash;&gt;-->
+        <!--<input type="file" id="add-pet-action-flow" style="display: none;" ng-model="apc.petImageFlow" flow-btn> <br/>-->
+    <!--</div>-->
+    <md-checkbox aria-label="Enable Pet" ng-if="apc.is_enabled" ng-model="apc.is_enabled">Enable Pet</md-checkbox>
+    <md-button id="btn-add-pet-images" class="md-raised" ng-if="!apc.showUpdateButton">
+        <label for="add-pet-action">Add Pet images</label>
+    </md-button>
+    <input type="file" id="add-pet-action" style="display: none;" ng-model="apc.petImage" ngf-select="true" webkitdirectory directory>
+
+    <md-button id="btn-upload-pet-images" class="md-raised md-primary" ng-click="apc.uploadPetImages()" ng-if="!apc.showUpdateButton">
+        <!--<label for="file-upload">Upload Pet images</label>-->
+        Upload pet images
+    </md-button><br>
+    <md-button id="btn-add-pet" class="md-raised" ng-click="apc.addPet()" ng-if="!apc.showUpdateButton">Add Pet</md-button><br>
+    <!--<input id="file-upload" type="file" style="display: none;" multiple>-->
+    <md-button id="btn-upload-pet" class="md-raised" ng-if="apc.showUpdateButton" ng-click="apc.updatePet()">Update Pet</md-button>
+</div>

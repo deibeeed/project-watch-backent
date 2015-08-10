@@ -1,0 +1,14 @@
+<div ng-init="init()">
+    <h1>Pets</h1>
+    <div layout="row">
+        <md-card layout-align="end center" ng-repeat="pet in pc.pets" ng-click="pc.selectItem(pet.name)" ng-init="pc.petAvatar = pet.avatar != null ? pc.getAvatarUrl(pet.avatar) : ''" flex>
+            <img ng-src="/api/fitpet/getSpecificFile/{{pet.avatar}}" class="ng-card-image" alt="{{pet.name}}" />
+            <md-card-content>
+                <h2>{{pet.name}}</h2>
+                <p>{{pet.description}}</p>
+            </md-card-content>
+        </md-card>
+
+    </div>
+</div>
+

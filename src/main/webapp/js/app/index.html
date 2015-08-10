@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="projectFitpetApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="projectFitpetApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="projectFitpetApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="projectFitpetApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+    <body layout="column" ng-controller="IndexController as ic">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+      <md-toolbar layout="row">
+          <div class="md-toolbar-tools">
+              <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+                  <!--<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>-->
+                  <md-icon aria-label="Menu" md-svg-src="assets/svg/ic_menu_48px.svg"></md-icon>
+              </md-button>
+              <h1>PROJECT Fit Pet - ALPHA</h1>
+          </div>
+      </md-toolbar>
+      <div layout="row" flex>
+          <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+              <md-menu-item>
+                  <md-button ng-click="ic.onMenuClick('/')" aria-label="home">
+                      <md-icon md-menu-align-target md-svg-icon="call:phone"></md-icon>
+                      Home
+                  </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <md-button ng-click="ic.onMenuClick('add-pet')" aria-label="Add Pet">
+                      <md-icon md-menu-align-target md-svg-icon="call:phone"></md-icon>
+                      Add Pet
+                  </md-button>
+              </md-menu-item>
+          </md-sidenav>
+      <div layout="column" flex id="content">
+          <md-content layout="column" flex class="md-padding">
+
+              <div ng-view></div>
+
+          </md-content>
+      </div>
+    </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+    <script src="js/common.js"></script>
+    <script src="js/Box2dWeb.js"></script>
+    <script src="js/AnimationHelper.js"></script>
+    <script src="js/requestAnimationFrame.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
+    <script src="app.js"></script>
+    <script src="pets/pets.js"></script>
+    <script src="pet_detail/pet_detail.js"></script>
+    <script src="add_pet/add_pet.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    <!-- material design -->
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+
+</body>
+</html>

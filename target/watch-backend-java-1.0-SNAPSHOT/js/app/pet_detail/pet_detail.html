@@ -1,0 +1,37 @@
+<div ng-init="init()">
+    <div style="display: inline-block;">
+        <img ng-src="/api/fitpet/getSpecificFile/{{pdc.avatar}}" alt="{{pdc.pet_name}}" style="width: 300px;" />
+        <div style="display: inline-block;">
+            <h2 id="pet_name">{{pdc.pet_name}}</h2>
+            <span id="description">{{pdc.description}}</span><br>
+            Price: <span id="price">{{pdc.price}}</span><br>
+            Is enabled: <span id="is_enabled">{{pdc.enabled}}</span><br>
+            Expiry date: <span id="expiry_date">{{pdc.expiry_date}}</span><br>
+            Created at: <span id="create_date">{{pdc.create_date}}</span><br>
+            Last update: <span id="update_date">{{pdc.update_date}}</span><br>
+            <md-button class="md-raised" ng-click="pdc.updatePet()">Update Pet</md-button>
+            <md-button class="md-raised md-warn" ng-click="pdc.deletePet()">Delete Pet</md-button>
+        </div>
+    </div>
+    <md-divider></md-divider>
+    <div>
+        <h2>{{pdc.pet_name}} actions</h2>
+        <div id="action-container">
+            <!-- canvas for animation-->
+            <!--<canvas id="canvas" style="width: 150px; height: 150px;"></canvas>-->
+            <ul>
+                <li ng-repeat="petAnimIndex in pdc.petImgArrIndexes">
+                    <span>{{petAnimIndex}}</span>
+                    <ul>
+                        <li ng-repeat="petAnim in pdc.petImgArr[petAnimIndex]">
+                            <!--<span>{{petAnim}}</span>-->
+                            <img src="/api/fitpet/getSpecificFile/{{pdc.avatar.split('+')[0]}}+{{petAnimIndex}}+{{petAnim}}" />
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <md-button class="md-raised" ng-click="pdc.updatePet()">Update Pet</md-button>
+        <md-button class="md-raised md-warn" ng-click="pdc.deletePet()">Delete Pet</md-button>
+    </div>
+</div>
